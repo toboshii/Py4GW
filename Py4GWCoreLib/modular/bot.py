@@ -183,7 +183,7 @@ class ModularBot:
                 self._botting_tree.SetHeroAIStateLogging(False)
             except Exception:
                 pass
-        if self._disable_headless_hero_ai_on_init:
+        if self._disable_headless_hero_ai_on_init or not self._enforce_local_native_engine:
             try:
                 self._botting_tree.DisableHeadlessHeroAI(reset_runtime=True)
             except Exception:
